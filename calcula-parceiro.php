@@ -20,7 +20,7 @@
 		
 			<link rel="shortcut icon" type="imagex/png" href="fav.png">
 			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-			<title>Sistema Cálculo de Parceiros &copy; Atuex Express</title>
+			<title>Sistema Cálculo de Parceiros</title>
 
 			<!--Carrega as bibliotecas JavaSript para as máscaras de CPF, Celular, etc. -->
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -129,59 +129,54 @@
 								echo "<td>";
 									echo "<label style=' height: 1.6rem;font-size: 0.7rem; color: black; background-color: #ebf0f5; 
 									margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
-									center; align-items: center;'>".$busca_usuario2['FILIAL']."</label><br>";
+									center; align-items: center;'>".$busca_usuario2['xxxx']."</label><br>";
 								echo "</td>";
 								echo "<td>";
 									echo "<label style='height: 1.6rem;font-size: 0.7rem; color: black; background-color: #ebf0f5; 
 									margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
-									center; align-items: center;'>".$busca_usuario2['TIPO']."</label><br>";
+									center; align-items: center;'>".$busca_usuario2['yyyyy']."</label><br>";
 								echo "</td>";
 								echo "<td>";
 									echo "<label style='height: 1.6rem;font-size: 0.7rem; color: black; background-color: #ebf0f5; 
 									margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
-									center; align-items: center;'>".$busca_usuario2['CTO']."</label><br>";
+									center; align-items: center;'>".$busca_usuario2['zzzzzzzz']."</label><br>";
 								echo "</td>";
 								echo "<td>";
 									echo "<label style='height: 1.6rem;font-size: 0.7rem; color: black; background-color: #ebf0f5; 
 									margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
-									center; align-items: center;'>".$busca_usuario2['DESTINATARIO']."</label><br>";
+									center; align-items: center;'>".$busca_usuario2['kkkkkkk']."</label><br>";
 								echo "</td>";
 								echo "<td>";
 									echo "<label style='; height: 1.6rem;font-size: 0.7rem; color: black; background-color: #ebf0f5; 
 									margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
-									center; align-items: center;'>".$busca_usuario2['EMISSAO']."</label><br>";
+									center; align-items: center;'>".$busca_usuario2['1']."</label><br>";
 								echo "</td>";
 								echo "<td>";
 									echo "<label style=' height: 1.6rem;font-size: 0.7rem; color: black; background-color: #ebf0f5; 
 									margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
-									center; align-items: center;'>".$busca_usuario2['PESO']."</label><br>";
+									center; align-items: center;'>".$busca_usuario2['2']."</label><br>";
 								echo "</td>";
 								echo "<td>";
 									echo "<label style=' width: 8rem; height: 1.6rem;font-size: 0.7rem; color: black; background-color: #ebf0f5; 
 									margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
-									center; align-items: center;'>".$busca_usuario2['PESO_CUBADO']."</label><br>";
+									center; align-items: center;'>".$busca_usuario2['3']."</label><br>";
 								echo "</td>";
 								echo "<td>";
 									echo "<label style=' width: 8rem; height: 1.6rem;font-size: 0.7rem; color: black; background-color: #ebf0f5; 
 									margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
-									center; align-items: center;'>R$ ".$busca_usuario2['TOT_FRETE']."</label><br>";
+									center; align-items: center;'>R$ ".$busca_usuario2['4']."</label><br>";
 								echo "</td>";
 								echo "<td>";
 									echo "<label style=' height: 1.6rem;font-size: 0.7rem; color: black; background-color: #ebf0f5; 
 									margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
-									center; align-items: center;'>".$busca_usuario2['CIDADE']."</label><br>";
+									center; align-items: center;'>".$busca_usuario2['5']."</label><br>";
 								echo "</td>";
 								echo "<td>";
 									echo "<label style=' height: 1.6rem;font-size: 0.7rem; color: black; background-color: #ebf0f5; 
 									margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
-									center; align-items: center;'>".$busca_usuario2['UF']."</label><br>";
+									center; align-items: center;'>".$busca_usuario2['6']."</label><br>";
 								echo "</td>";
 							echo "</tr>";
-							$cidade_destino = $busca_usuario2['CIDADE'];
-							$total_frete = $busca_usuario2['TOT_FRETE'];
-							$agd = $busca_usuario2['AGD'];
-							$icms = $busca_usuario2['ICMS'];
-							$peso = $busca_usuario2['PESO_CUBADO'];
 						}
 						echo "</table>";
 					}	catch (Exception $e){	}
@@ -193,10 +188,6 @@
 				<?php
 				try {
 					$Conexao    = Conexao::getConnection(); 
-					
-					$query2      = $Conexao->query("select PARCEIRO1, PARCEIRO2, PARCEIRO3, PARCEIRO4, PARCEIRO5, PARCEIRO6 from A_TAB_PARCEIROS
-													where CIDADE = '{$cidade_destino}'
-													");
 					
 					$usuarios2   = $query2->fetchAll();
 				
@@ -221,14 +212,7 @@
 										margin-top:-0.5rem; text-align:left; font-weight: bold; border-radius:5px; display: flex; justify-content: center; align-items: center; '>PARCEIRO 06</label><br></td>";
 																
 							echo "</tr>";								
-						
-						$cgc_parceiro1 = $busca_usuario2['PARCEIRO1'];
-						$cgc_parceiro2 = $busca_usuario2['PARCEIRO2'];
-						$cgc_parceiro3 = $busca_usuario2['PARCEIRO3'];
-						$cgc_parceiro4 = $busca_usuario2['PARCEIRO4'];
-						$cgc_parceiro5 = $busca_usuario2['PARCEIRO5'];
-						$cgc_parceiro6 = $busca_usuario2['PARCEIRO6'];
-						
+											
 						foreach($usuarios2 as $busca_usuario2) {
 												
 							echo "<tr>";
@@ -266,24 +250,14 @@
 										$usuarios3   = $query3->fetchAll();
 										
 										foreach($usuarios3 as $busca_usuario3) {
-											
-											$categoria = $busca_usuario3['CATEGORIA']; ///SALVA A CATEGORIA PARA SABER O QUE DE FATO IRÁ CALCULAR, SE SOBRE FAIXA DE PESO, ADVALOREM OU ETC...
-																						
-											$valor_peso_minimo = $busca_usuario3['FRT_PESO_MIN']; ///
-											
-											$valor_por_kg = $busca_usuario3['VLR_TON']; /// ====== CALCULA VALOR POR KG
-											
+																
 											$valor_por_kg = $valor_por_kg/1000; ///DIVIDE POR 100 PARA CONVERTER		
-											
-											$ad_valorem = $busca_usuario3['AD_GERAL']; ///SALVA ADVALOREM EM UMA VARIAVEL
 											
 											$ad_valorem = $ad_valorem/100; ///DIVIDE POR 100 PARA CONVERTER A %																													
 											
 											$base_calculo = $total_frete - $agd - $icms; //RETIRA O AGD E ICMS DO DOCUMENTO PARA REALIZAR A BASE DE CÁLCULO
 											
 											$resultado_parceiro1 = $base_calculo * $ad_valorem; ///REALIZA O CÁLCULO : BASE DE CALCULO SEM TAXAS * ADVALOREM DO PARCEIRO 1
-											
-											$valor_minimo_parceiro1 = $busca_usuario3['FRT_VALOR_MIN']; ///PEGA O VALOR MINIMO DO PARCEIRO 1
 											
 											// ============ REALIZA O ÚLTIMO CÁLCULO PARA COMPARAR SE RESULTADO DO ADVALOREM É MAIOR QUE O VALOR MÍNIMO
 											
@@ -293,44 +267,6 @@
 											// ====================== ------------------------------------- =======================
 											//VERIFICA SE PARCEIRO CALCULA POR ADVALOREM OU POR PESO MINIMO
 											// ====================== ------------------------------------- =======================
-											
-											if($categoria == "PESO FAIXA"){
-												
-												$excedente = $busca_usuario3['EXCEDENTE']; ///PEGA O VALOR DO EXCEDENTE
-												
-												$faixas_ate = $busca_usuario3['FINAL_1']; ///PEGA O MÁXIMO DAQUELA FAIXA
-												
-												$frete_na_faixa = $busca_usuario3['FRT_FIN_1']; ///VALOR DO FRETE NAQUELA FAIXA
-												
-												if($peso < $faixas_ate){
-													$resultado_final_parceiro2 = $frete_na_faixa;
-												}
-												else{
-													$calcula_excedente = $peso-$faixas_ate; //RETIRA OS 100 DO LIMITE PARA PEGAR APENAS QUANTOS KG FORAM EXCEDENTES
-													$calcula_excedente = $calcula_excedente * $excedente; //MULTIPLICA O EXCEDENTE PELO VALOR DO KG
-													$resultado_final_parceiro2 = $frete_na_faixa + $calcula_excedente; //RESULTADO FINAL: SOMA O MINIMO + EXCEDENTE :)
-												}
-												
-											}
-											
-											else{												
-												// ====================== ------------------------------------- =======================
-												//VERIFICA SE PARCEIRO CALCULA POR ADVALOREM OU POR PESO MINIMO
-												// ====================== ------------------------------------- =======================
-												
-												if($ad_valorem == 0){ 
-												
-													if($peso < 100){
-														$resultado_final_parceiro2 = $valor_peso_minimo;
-													}
-													else {													
-														$calcula_excedente = $peso-100; //RETIRA OS 100 DO LIMITE PARA PEGAR APENAS QUANTOS KG FORAM EXCEDENTES
-														$calcula_excedente = $calcula_excedente * $valor_por_kg; //MULTIPLICA O EXCEDENTE PELO VALOR DO KG
-														$resultado_final_parceiro2 = $valor_peso_minimo + $calcula_excedente; //RESULTADO FINAL: SOMA O MINIMO + EXCEDENTE :)
-													}												 
-												
-												}
-											}
 											
 											echo "<label style=' font-size: 0.7rem; color: black; background-color: #ebf0f5; 
 											margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
@@ -347,7 +283,7 @@
 								
 								echo "<td>";
 								
-									if($busca_usuario2['PARCEIRO2'] == NULL){
+									if($busca_usuario2['xxx'] == NULL){
 										echo "<label style=' height: 1.6rem;font-size: 0.7rem; color: black; background-color: #ebf0f5; 
 									margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
 									center; align-items: center;'>-</label><br>";	
@@ -359,7 +295,7 @@
 										foreach($usuarios3 as $busca_usuario3) {
 											
 											
-											$tarifa_parceiro2 = $busca_usuario3['TARIFA']; ///SALVA A TARIFA EM UMA VARIAVEL
+											$tarifa_parceiro2 = $busca_usuario3['oo']; ///SALVA A TARIFA EM UMA VARIAVEL
 											
 											echo "<label style=' height: 1.6rem;font-size: 0.7rem; color: black; background-color: #ebf0f5; 
 											margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
@@ -375,15 +311,15 @@
 										
 										foreach($usuarios3 as $busca_usuario3) {
 											
-											$categoria = $busca_usuario3['CATEGORIA']; ///SALVA A CATEGORIA PARA SABER O QUE DE FATO IRÁ CALCULAR, SE SOBRE FAIXA DE PESO, ADVALOREM OU ETC...
+											$categoria = $busca_usuario3['1']; ///SALVA A CATEGORIA PARA SABER O QUE DE FATO IRÁ CALCULAR, SE SOBRE FAIXA DE PESO, ADVALOREM OU ETC...
 											
-											$valor_peso_minimo = $busca_usuario3['FRT_PESO_MIN']; ///
+											$valor_peso_minimo = $busca_usuario3['2']; ///
 											
-											$valor_por_kg = $busca_usuario3['VLR_TON']; /// ====== CALCULA VALOR POR KG
+											$valor_por_kg = $busca_usuario3['3']; /// ====== CALCULA VALOR POR KG
 											
 											$valor_por_kg = $valor_por_kg/1000; ///DIVIDE POR 100 PARA CONVERTER		
 											
-											$ad_valorem = $busca_usuario3['AD_GERAL']; ///SALVA ADVALOREM EM UMA VARIAVEL
+											$ad_valorem = $busca_usuario3['4']; ///SALVA ADVALOREM EM UMA VARIAVEL
 											
 											$ad_valorem = $ad_valorem/100; ///DIVIDE POR 100 PARA CONVERTER A %																													
 											
@@ -391,7 +327,7 @@
 											
 											$resultado_parceiro1 = $base_calculo * $ad_valorem; ///REALIZA O CÁLCULO : BASE DE CALCULO SEM TAXAS * ADVALOREM DO PARCEIRO 1
 											
-											$valor_minimo_parceiro1 = $busca_usuario3['FRT_VALOR_MIN']; ///PEGA O VALOR MINIMO DO PARCEIRO 1
+											$valor_minimo_parceiro1 = $busca_usuario3['5']; ///PEGA O VALOR MINIMO DO PARCEIRO 1
 											
 											// ============ REALIZA O ÚLTIMO CÁLCULO PARA COMPARAR SE RESULTADO DO ADVALOREM É MAIOR QUE O VALOR MÍNIMO
 											
@@ -400,11 +336,11 @@
 											
 											if($categoria == "PESO FAIXA"){
 												
-												$excedente = $busca_usuario3['EXCEDENTE']; ///PEGA O VALOR DO EXCEDENTE
+												$excedente = $busca_usuario3['1']; ///PEGA O VALOR DO EXCEDENTE
 												
-												$faixas_ate = $busca_usuario3['FINAL_1']; ///PEGA O MÁXIMO DAQUELA FAIXA
+												$faixas_ate = $busca_usuario3['2']; ///PEGA O MÁXIMO DAQUELA FAIXA
 												
-												$frete_na_faixa = $busca_usuario3['FRT_FIN_1']; ///VALOR DO FRETE NAQUELA FAIXA
+												$frete_na_faixa = $busca_usuario3['3']; ///VALOR DO FRETE NAQUELA FAIXA
 												
 												if($peso < $faixas_ate){
 													$resultado_final_parceiro2 = $frete_na_faixa;
@@ -450,7 +386,7 @@
 								
 								echo "<td>";
 								
-								if($busca_usuario2['PARCEIRO3'] == NULL){
+								if($busca_usuario2['3'] == NULL){
 										echo "<label style=' height: 1.6rem;font-size: 0.7rem; color: black; background-color: #ebf0f5; 
 									margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
 									center; align-items: center;'>-</label><br>";	
@@ -461,7 +397,7 @@
 										
 										foreach($usuarios3 as $busca_usuario3) {											
 											
-											$tarifa_parceiro3 = $busca_usuario3['TARIFA']; ///SALVA A TARIFA EM UMA VARIAVEL
+											$tarifa_parceiro3 = $busca_usuario3['3']; ///SALVA A TARIFA EM UMA VARIAVEL
 											
 											echo "<label style=' height: 1.6rem;font-size: 0.7rem; color: black; background-color: #ebf0f5; 
 											margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
@@ -477,13 +413,13 @@
 										
 										foreach($usuarios3 as $busca_usuario3) {
 											
-											$valor_peso_minimo = $busca_usuario3['FRT_PESO_MIN']; ///
+											$valor_peso_minimo = $busca_usuario3['3']; ///
 											
-											$valor_por_kg = $busca_usuario3['VLR_TON']; /// ====== CALCULA VALOR POR KG
+											$valor_por_kg = $busca_usuario3['3']; /// ====== CALCULA VALOR POR KG
 											
 											$valor_por_kg = $valor_por_kg/1000; ///DIVIDE POR 100 PARA CONVERTER		
 											
-											$ad_valorem = $busca_usuario3['AD_GERAL']; ///SALVA ADVALOREM EM UMA VARIAVEL
+											$ad_valorem = $busca_usuario3['3']; ///SALVA ADVALOREM EM UMA VARIAVEL
 											
 											$ad_valorem = $ad_valorem/100; ///DIVIDE POR 100 PARA CONVERTER A %																													
 											
@@ -491,7 +427,7 @@
 											
 											$resultado_parceiro1 = $base_calculo * $ad_valorem; ///REALIZA O CÁLCULO : BASE DE CALCULO SEM TAXAS * ADVALOREM DO PARCEIRO 1
 											
-											$valor_minimo_parceiro1 = $busca_usuario3['FRT_VALOR_MIN']; ///PEGA O VALOR MINIMO DO PARCEIRO 1
+											$valor_minimo_parceiro1 = $busca_usuario3['3']; ///PEGA O VALOR MINIMO DO PARCEIRO 1
 											
 											// ============ REALIZA O ÚLTIMO CÁLCULO PARA COMPARAR SE RESULTADO DO ADVALOREM É MAIOR QUE O VALOR MÍNIMO
 											
@@ -530,7 +466,7 @@
 								
 								echo "<td>";
 								
-									if($busca_usuario2['PARCEIRO4'] == NULL){
+									if($busca_usuario2['4'] == NULL){
 										echo "<label style=' height: 1.6rem;font-size: 0.7rem; color: black; background-color: #ebf0f5; 
 									margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
 									center; align-items: center;'>-</label><br>";	
@@ -541,7 +477,7 @@
 										
 										foreach($usuarios3 as $busca_usuario3) {											
 											
-											$tarifa_parceiro4 = $busca_usuario3['TARIFA']; ///SALVA A TARIFA EM UMA VARIAVEL
+											$tarifa_parceiro4 = $busca_usuario3['4']; ///SALVA A TARIFA EM UMA VARIAVEL
 											
 											echo "<label style=' height: 1.6rem;font-size: 0.7rem; color: black; background-color: #ebf0f5; 
 											margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
@@ -557,13 +493,13 @@
 										
 										foreach($usuarios3 as $busca_usuario3) {
 											
-											$valor_peso_minimo = $busca_usuario3['FRT_PESO_MIN']; ///
+											$valor_peso_minimo = $busca_usuario3['4']; ///
 											
-											$valor_por_kg = $busca_usuario3['VLR_TON']; /// ====== CALCULA VALOR POR KG
+											$valor_por_kg = $busca_usuario3['4']; /// ====== CALCULA VALOR POR KG
 											
 											$valor_por_kg = $valor_por_kg/1000; ///DIVIDE POR 100 PARA CONVERTER		
 											
-											$ad_valorem = $busca_usuario3['AD_GERAL']; ///SALVA ADVALOREM EM UMA VARIAVEL
+											$ad_valorem = $busca_usuario3['4']; ///SALVA ADVALOREM EM UMA VARIAVEL
 											
 											$ad_valorem = $ad_valorem/100; ///DIVIDE POR 100 PARA CONVERTER A %																													
 											
@@ -571,169 +507,7 @@
 											
 											$resultado_parceiro1 = $base_calculo * $ad_valorem; ///REALIZA O CÁLCULO : BASE DE CALCULO SEM TAXAS * ADVALOREM DO PARCEIRO 1
 											
-											$valor_minimo_parceiro1 = $busca_usuario3['FRT_VALOR_MIN']; ///PEGA O VALOR MINIMO DO PARCEIRO 1
-											
-											// ============ REALIZA O ÚLTIMO CÁLCULO PARA COMPARAR SE RESULTADO DO ADVALOREM É MAIOR QUE O VALOR MÍNIMO
-											
-											if($resultado_parceiro1 > $valor_minimo_parceiro1){ $resultado_final_parceiro1 = $resultado_parceiro1; } 
-											else { $resultado_final_parceiro1 = $valor_minimo_parceiro1; }
-											
-											// ====================== ------------------------------------- =======================
-											//VERIFICA SE PARCEIRO CALCULA POR ADVALOREM OU POR PESO MINIMO
-											// ====================== ------------------------------------- =======================
-											
-											if($ad_valorem == 0){ 
-											
-												if($peso < 100){
-													$resultado_final_parceiro1 = $valor_peso_minimo;
-												}
-												else {													
-													$calcula_excedente = $peso-100; //RETIRA OS 100 DO LIMITE PARA PEGAR APENAS QUANTOS KG FORAM EXCEDENTES
-													$calcula_excedente = $calcula_excedente * $valor_por_kg; //MULTIPLICA O EXCEDENTE PELO VALOR DO KG
-													$resultado_final_parceiro1 = $valor_peso_minimo + $calcula_excedente; //RESULTADO FINAL: SOMA O MINIMO + EXCEDENTE :)
-												}												 
-											
-											}
-											
-											echo "<label style=' font-size: 0.7rem; color: black; background-color: #ebf0f5; 
-											margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
-											center; align-items: center;'>AGD: ".$agd."<br> ICMS: ".$icms."<br> BASE DE CÁLCULO SEM TAXAS: ".$base_calculo."<br> ADVALOREM: "
-											.$ad_valorem."%<br> PRIMEIRO CÁLCULO: R$ ".substr($resultado_parceiro1,0,-2)."<br> VALOR MÍNIMO: R$ ".$valor_minimo_parceiro1.
-											"<br> PESO MÍNIMO: R$ ".$valor_peso_minimo."<br>RESULTADO: R$".$resultado_final_parceiro1."</label><br>";											
-										}
-									}
-								echo "</td>";
-								
-								// ====================== ------------------------------------- =======================
-								// ====================== CALCULO DO QUINTO POSSÍVEL PARCEIRO =======================
-								// ====================== ------------------------------------- =======================
-								
-								echo "<td>";
-								
-									if($busca_usuario2['PARCEIRO5'] == NULL){
-										echo "<label style=' height: 1.6rem;font-size: 0.7rem; color: black; background-color: #ebf0f5; 
-									margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
-									center; align-items: center;'>-</label><br>";	
-									}	
-									else{
-										
-										$usuarios3   = $query3->fetchAll();
-										
-										foreach($usuarios3 as $busca_usuario3) {
-											
-											
-											$tarifa_parceiro5 = $busca_usuario3['TARIFA']; ///SALVA A TARIFA EM UMA VARIAVEL
-											
-											echo "<label style=' height: 1.6rem;font-size: 0.7rem; color: black; background-color: #ebf0f5; 
-											margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
-											center; align-items: center;'>".$tarifa_parceiro5."</label><br>";											
-										}
-										
-										// ====================== ------------------------------------- =======================
-										// ====================== ESTE SELECT PARA PEGAR TODAS AS INFORMAÇÕES =================
-										// ============ PARA REALIZAR O CÁLCULO ATRAVÉS DA TARIFA ENCONTRADA NO BANCO ==========
-										// ====================== ------------------------------------- =======================
-										
-										$usuarios3   = $query3->fetchAll();
-										
-										foreach($usuarios3 as $busca_usuario3) {
-											
-											$valor_peso_minimo = $busca_usuario3['FRT_PESO_MIN']; ///
-											
-											$valor_por_kg = $busca_usuario3['VLR_TON']; /// ====== CALCULA VALOR POR KG
-											
-											$valor_por_kg = $valor_por_kg/1000; ///DIVIDE POR 100 PARA CONVERTER		
-											
-											$ad_valorem = $busca_usuario3['AD_GERAL']; ///SALVA ADVALOREM EM UMA VARIAVEL
-											
-											$ad_valorem = $ad_valorem/100; ///DIVIDE POR 100 PARA CONVERTER A %																													
-											
-											$base_calculo = $total_frete - $agd - $icms; //RETIRA O AGD E ICMS DO DOCUMENTO PARA REALIZAR A BASE DE CÁLCULO
-											
-											$resultado_parceiro1 = $base_calculo * $ad_valorem; ///REALIZA O CÁLCULO : BASE DE CALCULO SEM TAXAS * ADVALOREM DO PARCEIRO 1
-											
-											$valor_minimo_parceiro1 = $busca_usuario3['FRT_VALOR_MIN']; ///PEGA O VALOR MINIMO DO PARCEIRO 1
-											
-											// ============ REALIZA O ÚLTIMO CÁLCULO PARA COMPARAR SE RESULTADO DO ADVALOREM É MAIOR QUE O VALOR MÍNIMO
-											
-											if($resultado_parceiro1 > $valor_minimo_parceiro1){ $resultado_final_parceiro1 = $resultado_parceiro1; } 
-											else { $resultado_final_parceiro1 = $valor_minimo_parceiro1; }
-											
-											// ====================== ------------------------------------- =======================
-											//VERIFICA SE PARCEIRO CALCULA POR ADVALOREM OU POR PESO MINIMO
-											// ====================== ------------------------------------- =======================
-											
-											if($ad_valorem == 0){ 
-											
-												if($peso < 100){
-													$resultado_final_parceiro1 = $valor_peso_minimo;
-												}
-												else {													
-													$calcula_excedente = $peso-100; //RETIRA OS 100 DO LIMITE PARA PEGAR APENAS QUANTOS KG FORAM EXCEDENTES
-													$calcula_excedente = $calcula_excedente * $valor_por_kg; //MULTIPLICA O EXCEDENTE PELO VALOR DO KG
-													$resultado_final_parceiro1 = $valor_peso_minimo + $calcula_excedente; //RESULTADO FINAL: SOMA O MINIMO + EXCEDENTE :)
-												}												 
-											
-											}
-											
-											echo "<label style=' font-size: 0.7rem; color: black; background-color: #ebf0f5; 
-											margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
-											center; align-items: center;'>AGD: ".$agd."<br> ICMS: ".$icms."<br> BASE DE CÁLCULO SEM TAXAS: ".$base_calculo."<br> ADVALOREM: "
-											.$ad_valorem."%<br> PRIMEIRO CÁLCULO: R$ ".substr($resultado_parceiro1,0,-2)."<br> VALOR MÍNIMO: R$ ".$valor_minimo_parceiro1.
-											"<br> PESO MÍNIMO: R$ ".$valor_peso_minimo."<br>RESULTADO: R$".$resultado_final_parceiro1."</label><br>";											
-										}
-									}
-								echo "</td>";
-								
-								// ====================== ------------------------------------- =======================
-								// ====================== CALCULO DO SEXTO POSSÍVEL PARCEIRO =======================
-								// ====================== ------------------------------------- =======================
-								
-								echo "<td>";
-								
-									if($busca_usuario2['PARCEIRO6'] == NULL){
-										echo "<label style=' height: 1.6rem;font-size: 0.7rem; color: black; background-color: #ebf0f5; 
-									margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
-									center; align-items: center;'>-</label><br>";	
-									}	
-									else{										
-						
-										$usuarios3   = $query3->fetchAll();
-										
-										foreach($usuarios3 as $busca_usuario3) {
-											
-											
-											$tarifa_parceiro6 = $busca_usuario3['TARIFA']; ///SALVA A TARIFA EM UMA VARIAVEL
-											
-											echo "<label style=' height: 1.6rem;font-size: 0.7rem; color: black; background-color: #ebf0f5; 
-											margin-top:-1.1rem; text-align:left; font-weight: normal; border-radius:5px; display: flex; justify-content: 
-											center; align-items: center;'>".$tarifa_parceiro6."</label><br>";											
-										}
-										
-										// ====================== ------------------------------------- =======================
-										// ====================== ESTE SELECT PARA PEGAR TODAS AS INFORMAÇÕES =================
-										// ============ PARA REALIZAR O CÁLCULO ATRAVÉS DA TARIFA ENCONTRADA NO BANCO ==========
-										// ====================== ------------------------------------- =======================
-										
-										$usuarios3   = $query3->fetchAll();
-										
-										foreach($usuarios3 as $busca_usuario3) {
-											
-											$valor_peso_minimo = $busca_usuario3['FRT_PESO_MIN']; ///
-											
-											$valor_por_kg = $busca_usuario3['VLR_TON']; /// ====== CALCULA VALOR POR KG
-											
-											$valor_por_kg = $valor_por_kg/1000; ///DIVIDE POR 100 PARA CONVERTER		
-											
-											$ad_valorem = $busca_usuario3['AD_GERAL']; ///SALVA ADVALOREM EM UMA VARIAVEL
-											
-											$ad_valorem = $ad_valorem/100; ///DIVIDE POR 100 PARA CONVERTER A %																													
-											
-											$base_calculo = $total_frete - $agd - $icms; //RETIRA O AGD E ICMS DO DOCUMENTO PARA REALIZAR A BASE DE CÁLCULO
-											
-											$resultado_parceiro1 = $base_calculo * $ad_valorem; ///REALIZA O CÁLCULO : BASE DE CALCULO SEM TAXAS * ADVALOREM DO PARCEIRO 1
-											
-											$valor_minimo_parceiro1 = $busca_usuario3['FRT_VALOR_MIN']; ///PEGA O VALOR MINIMO DO PARCEIRO 1
+											$valor_minimo_parceiro1 = $busca_usuario3['4']; ///PEGA O VALOR MINIMO DO PARCEIRO 1
 											
 											// ============ REALIZA O ÚLTIMO CÁLCULO PARA COMPARAR SE RESULTADO DO ADVALOREM É MAIOR QUE O VALOR MÍNIMO
 											
@@ -783,8 +557,8 @@
 		<div id="rodape">
 			<label style="background-color: #042f66;    text-align: center;    font-weight:normal;    width:100%;
 			color:white;     position:fixed;     bottom:0px;       font-size: 0.9rem;    height: 1.8rem;">
-				<?php echo date('Y'); ?> &copy; Todos os direitos reservados - Desenvolvido por Atuex Express - 
-				<a href="mailto: suporte@transatual.com.br" style="font-size: 0.9rem; color: white; font-weight:bold; text-decoration:none;">@suporte</a></label>
+				<?php echo date('Y'); ?> 
+			</label>
 		</div>
 			
 	</body>
